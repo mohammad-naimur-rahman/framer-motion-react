@@ -10,8 +10,11 @@ const Home = () => {
       animate={{ y: 0, opacity: 1 }}
     >
       <motion.h2
+        initial={{
+          y: -100,
+        }}
         animate={{
-          fontSize: 50,
+          y: 0,
         }}
       >
         Welcome to Pizza Joint
