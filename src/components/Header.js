@@ -1,5 +1,6 @@
 import React from 'react'
 import { useHistory } from 'react-router-dom'
+import { motion } from 'framer-motion'
 
 const Header = () => {
   const history = useHistory()
@@ -18,9 +19,20 @@ const Header = () => {
           <path fill="none" d="M50 30 L50 -10 C50 -10 90 -10 90 30 Z" />
         </svg>
       </div>
-      <div className="title">
+      <motion.div
+        className="title"
+        initial={{ x: 500 }}
+        animate={{ x: 0 }}
+        transition={{
+          type: 'spring',
+          duration: 0.3,
+          stiffness: 80,
+          mass: 1,
+          damping: 12,
+        }}
+      >
         <h1>Pizza Joint</h1>
-      </div>
+      </motion.div>
     </header>
   )
 }
