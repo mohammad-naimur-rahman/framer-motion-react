@@ -2,15 +2,31 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 
+export const baseVariants = {
+  init: { opacity: 0, scale: 0.2 },
+  animate: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      duration: 0.5,
+      type: 'spring',
+      stiffness: 120,
+      mass: 0.2,
+      damping: 3,
+      when: 'beforeChildren',
+      staggerChildren: 1,
+    },
+  },
+}
+
 const Base = ({ addBase, pizza }) => {
   const bases = ['Classic', 'Thin & Crispy', 'Thick Crust']
-
   return (
     <motion.div
       className="base container"
-      initial={{ opacity: 0, scale: 0.2 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.5, type: 'spring', stiffness: 120 }}
+      variants={baseVariants}
+      initial="init"
+      animate="animate"
     >
       <h3>Step 1: Choose Your Base</h3>
       <ul>
