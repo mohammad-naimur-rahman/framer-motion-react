@@ -21,15 +21,11 @@ const Home = () => {
       </motion.h2>
       <Link to="/base">
         <motion.button
-          initial={{ opacity: 0, y: 100 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{
-            delay: 0.3,
-            duration: 0.2,
-            type: 'spring',
-            stiffness: 500,
+          whileHover={{
+            scale: 1.1,
+            textShadow: '0 0 8px #fff',
+            boxShadow: '0 0 8px #fff',
           }}
-          //whileHover={{ scale: 1.1 }}
         >
           Create Your Pizza
         </motion.button>
