@@ -11,7 +11,7 @@ const Home = () => {
     >
       <motion.h2
         initial={{
-          y: -100,
+          y: 100,
         }}
         animate={{
           y: 0,
@@ -20,7 +20,17 @@ const Home = () => {
         Welcome to Pizza Joint
       </motion.h2>
       <Link to="/base">
-        <motion.button whileHover={{ scale: 1.1 }}>
+        <motion.button
+          initial={{ opacity: 0, y: 100 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            delay: 0.3,
+            duration: 0.2,
+            type: 'spring',
+            stiffness: 500,
+          }}
+          //whileHover={{ scale: 1.1 }}
+        >
           Create Your Pizza
         </motion.button>
       </Link>
