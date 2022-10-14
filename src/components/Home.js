@@ -3,12 +3,6 @@ import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 
 const buttonVariants = {
-  // visible: {
-  //   x: [0, -20, 20, -20, 20, 0],
-  //   transition: {
-  //     delay: 2,
-  //   },
-  // },
   hover: {
     scale: [1, 1.1, 1, 1.05, 1],
     textShadow: '0 0 8px #fff',

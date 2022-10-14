@@ -19,6 +19,19 @@ export const baseVariants = {
   },
 }
 
+const buttonVariants = {
+  hover: {
+    scale: 1.1,
+    textShadow: '0 0 8px #fff',
+    boxShadow: '0 0 8px #fff',
+    transition: {
+      duration: 0.1,
+      yoyo: 4,
+      //yoyo: Infinity
+    },
+  },
+}
+
 const Base = ({ addBase, pizza }) => {
   const bases = ['Classic', 'Thin & Crispy', 'Thick Crust']
   return (
@@ -57,13 +70,7 @@ const Base = ({ addBase, pizza }) => {
           transition={{ type: 'spring', stiffness: 200 }}
         >
           <Link to="/toppings">
-            <motion.button
-              whileHover={{
-                scale: 1.1,
-                textShadow: '0 0 8px #fff',
-                boxShadow: '0 0 8px #fff',
-              }}
-            >
+            <motion.button variants={buttonVariants} whileHover="hover">
               Next
             </motion.button>
           </Link>
