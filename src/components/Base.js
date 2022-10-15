@@ -17,6 +17,9 @@ export const baseVariants = {
       staggerChildren: 1,
     },
   },
+  exit: {
+    y: '-100vh',
+  },
 }
 
 const buttonVariants = {
