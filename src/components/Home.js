@@ -15,12 +15,33 @@ const buttonVariants = {
   },
 }
 
+export const containerVariants = {
+  init: {
+    opacity: 0,
+    x: '100vw',
+  },
+  animate: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      type: 'spring',
+      delay: 0.5,
+    },
+  },
+  exit: {
+    opacity: 0,
+    x: '-100vw',
+  },
+}
+
 const Home = () => {
   return (
     <motion.div
       className="home container"
-      initial={{ y: 500, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
+      variants={containerVariants}
+      initial="init"
+      animate="animate"
+      exit="exit"
     >
       <motion.h2
         initial={{

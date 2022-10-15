@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
-import { baseVariants } from './Base'
+import { containerVariants } from './Home'
 
 const childVariants = {
   init: {
@@ -22,7 +22,7 @@ const Order = ({ pizza }) => {
       {showModal && (
         <motion.div
           className="container order border rounded shadow-lg"
-          variants={baseVariants}
+          variants={containerVariants}
           initial="init"
           animate="animate"
           exit="exit"

@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
+import { containerVariants } from './Home'
 
 export const baseVariants = {
   init: { opacity: 0, scale: 0.2 },
@@ -40,9 +41,10 @@ const Base = ({ addBase, pizza }) => {
   return (
     <motion.div
       className="base container"
-      variants={baseVariants}
+      variants={containerVariants}
       initial="init"
       animate="animate"
+      exit="exit"
     >
       <h3>Step 1: Choose Your Base</h3>
       <ul>

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { baseVariants } from './Base'
+import { containerVariants } from './Home'
 
 const Toppings = ({ addTopping, pizza }) => {
   let toppings = [
@@ -16,9 +16,10 @@ const Toppings = ({ addTopping, pizza }) => {
   return (
     <motion.div
       className="toppings container"
-      variants={baseVariants}
+      variants={containerVariants}
       initial="init"
       animate="animate"
+      exit="exit"
     >
       <h3>Step 2: Choose Toppings</h3>
       <ul>
@@ -44,7 +45,8 @@ const Toppings = ({ addTopping, pizza }) => {
       <Link to="/order">
         <motion.button
           whileHover={{
-            scale: 1.1,
+            scale: [1, 1.1, 1, 1.05, 1],
+            duration: 0.1,
             textShadow: '0 0 8px #fff',
             boxShadow: '0 0 8px #fff',
           }}
