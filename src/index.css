@@ -134,3 +134,12 @@ li span.active::before {
 .order p {
   margin: 20px auto;
 }
+
+.loader {
+  width: 10px;
+  height: 10px;
+  background: white;
+  border-radius: 100%;
+  margin: auto;
+  margin-top: 100px;
+}
