@@ -1,5 +1,5 @@
-import React from 'react'
-import { motion } from 'framer-motion'
+import React, { useState } from 'react'
+import { motion, useCycle } from 'framer-motion'
 
 const loaderVariants = {
   animate: {
@@ -17,15 +17,32 @@ const loaderVariants = {
       },
     },
   },
+  animate2: {
+    y: [0, -40],
+    x: 0,
+    transition: {
+      y: {
+        yoyo: Infinity,
+        duration: 0.25,
+        easing: 'easeOut',
+      },
+    },
+  },
 }
 
 const Loader = () => {
+  const [animation, cycleAnimation] = useCycle('animate', 'animate2')
   return (
-    <motion.div
-      className="loader"
-      variants={loaderVariants}
-      animate="animate"
-    ></motion.div>
+    <>
+      <motion.div
+        className="loader"
+        variants={loaderVariants}
+        animate={animation}
+      ></motion.div>
+      <p className="animate-change-btn" onClick={cycleAnimation}>
+        Change animation
+      </p>
+    </>
   )
 }
 
