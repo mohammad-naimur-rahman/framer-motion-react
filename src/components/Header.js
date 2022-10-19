@@ -1,5 +1,4 @@
 import React from 'react'
-import { useHistory } from 'react-router-dom'
 import { motion } from 'framer-motion'
 
 const svgVariants = {
@@ -30,10 +29,15 @@ const pathVariants = {
 }
 
 const Header = () => {
-  const history = useHistory()
   return (
     <header>
-      <div className="logo" onClick={() => history.push('/')}>
+      <motion.div
+        className="logo"
+        drag
+        dragConstraints={{ left: 0, top: 0, right: 0, bottom: 0 }}
+        dragElastic={0.2}
+        dragMomentum={false}
+      >
         <motion.svg
           className="pizza-svg"
           xmlns="http://www.w3.org/2000/svg"
@@ -53,7 +57,7 @@ const Header = () => {
             variants={pathVariants}
           />
         </motion.svg>
-      </div>
+      </motion.div>
       <motion.div
         className="title"
         initial={{ x: 500 }}
