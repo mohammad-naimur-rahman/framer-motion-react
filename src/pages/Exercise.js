@@ -32,7 +32,23 @@ const Exercise = () => {
       </section>
       <section className="section">
         <p>Keyframes</p>
-        <motion.div className="w-32 h-32 bg-red-500 rounded" />
+        <motion.div
+          className="w-32 h-32 bg-red-500 rounded"
+          animate={{ x: [null, 100, -100, 0] }}
+        />
+      </section>
+      <section className="section">
+        <p>While in view</p>
+        <motion.div
+          className="w-32 h-32 bg-red-500 rounded"
+          initial={{ opacity: 1 }}
+          whileTap={{ scale: 1.1 }}
+          whileHover={{ scale: [null, 1.2, 1] }}
+          whileInView={() => {
+            console.log('IN VIEW')
+            return {}
+          }}
+        ></motion.div>
       </section>
     </section>
   )
