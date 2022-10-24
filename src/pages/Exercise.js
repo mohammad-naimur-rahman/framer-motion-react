@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
-import { AnimatePresence } from 'framer-motion/dist/framer-motion'
+import ExitAnimation from './ExitAnimation'
 
 const Exercise = () => {
-  const [isVisible, setisVisible] = useState(false)
+  const [isVisible, setisVisible] = useState(true)
+
   return (
     <section className="container-full">
       <section className="section">
@@ -23,19 +24,15 @@ const Exercise = () => {
         ></motion.div>
       </section>
       <section className="section">
-        <AnimatePresence>
-          {isVisible && (
-            <motion.div
-              className="w-32 h-32 bg-red-500 rounded"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-            />
-          )}
-        </AnimatePresence>
+        <p>Exit Animation</p>
+        <ExitAnimation isVisible={isVisible} />
         <button onClick={() => setisVisible((isVisible) => !isVisible)}>
-          Toggle Show
+          {isVisible ? 'Hide' : 'Show'}
         </button>
+      </section>
+      <section className="section">
+        <p>Keyframes</p>
+        <motion.div className="w-32 h-32 bg-red-500 rounded" />
       </section>
     </section>
   )
