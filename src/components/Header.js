@@ -29,6 +29,11 @@ const pathVariants = {
   },
 }
 
+const links = [
+  { id: 1, name: 'Overview', link: '/overview' },
+  { id: 2, name: 'Layout', link: '/layout' },
+]
+
 const Header = () => {
   return (
     <header>
@@ -75,9 +80,11 @@ const Header = () => {
           <Link to="/">Pizza Joint</Link>
         </h1>
         <ul className="flex mt-2">
-          <li className="text-sm border rounded px-3 py-1 mx-2">
-            <Link to="/overview">Overview</Link>
-          </li>
+          {links.map(({ id, name, link }) => (
+            <li className="text-sm border rounded px-3 py-1 mx-2" key={id}>
+              <Link to={link}>{name}</Link>
+            </li>
+          ))}
         </ul>
       </motion.div>
     </header>

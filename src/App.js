@@ -7,6 +7,7 @@ import Toppings from './components/Toppings'
 import Order from './components/Order'
 import { AnimatePresence } from 'framer-motion'
 import Overview from './pages/Overview/Overview'
+import Layout from './pages/Overview/Layout/Layout'
 
 function App() {
   const location = useLocation()
@@ -46,6 +47,9 @@ function App() {
           </Route>
           <Route path="/overview">
             <Overview />
+          </Route>
+          <Route path="/layout">
+            <Layout />
           </Route>
         </Switch>
       </AnimatePresence>

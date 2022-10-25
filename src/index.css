@@ -148,3 +148,25 @@ li span.active::before {
   margin-top: 20px;
   cursor: pointer;
 }
+
+.switch {
+  width: 100px;
+  height: 50px;
+  border-radius: 9999px;
+  border: 2px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  cursor: pointer;
+}
+
+.switch[data-ison='true'] {
+  justify-content: flex-end;
+}
+
+.switch-btn {
+  width: 46px;
+  height: 46px;
+  background-color: limegreen;
+  border-radius: 50%;
+}

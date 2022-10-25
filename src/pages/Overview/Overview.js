@@ -47,7 +47,7 @@ const Overview = () => {
 
   return (
     <section className="container-full">
-      <h3 className="text-3xl">Overview</h3>
+      <h3 className="text-3xl text-center">Overview</h3>
       <section className="section">
         <p>Easing</p>
         <motion.div
