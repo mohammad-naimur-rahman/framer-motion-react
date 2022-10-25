@@ -5,8 +5,8 @@ import Home from './components/Home'
 import Base from './components/Base'
 import Toppings from './components/Toppings'
 import Order from './components/Order'
-import Exercise from './pages/Exercise'
 import { AnimatePresence } from 'framer-motion'
+import Overview from './pages/Overview/Overview'
 
 function App() {
   const location = useLocation()
@@ -32,6 +32,9 @@ function App() {
       <Header />
       <AnimatePresence exitBeforeEnter>
         <Switch location={location} key={location.key}>
+          <Route path="/" exact>
+            <Home />
+          </Route>
           <Route path="/base">
             <Base addBase={addBase} pizza={pizza} />
           </Route>
@@ -41,11 +44,8 @@ function App() {
           <Route path="/order">
             <Order pizza={pizza} />
           </Route>
-          <Route path="/exercise">
-            <Exercise />
-          </Route>
-          <Route path="/">
-            <Home />
+          <Route path="/overview">
+            <Overview />
           </Route>
         </Switch>
       </AnimatePresence>

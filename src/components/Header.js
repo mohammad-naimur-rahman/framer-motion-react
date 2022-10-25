@@ -1,5 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
 
 const svgVariants = {
   init: {
@@ -70,7 +71,14 @@ const Header = () => {
           damping: 12,
         }}
       >
-        <h1>Pizza Joint</h1>
+        <h1>
+          <Link to="/">Pizza Joint</Link>
+        </h1>
+        <ul className="flex mt-2">
+          <li className="text-sm border rounded px-3 py-1 mx-2">
+            <Link to="/overview">Overview</Link>
+          </li>
+        </ul>
       </motion.div>
     </header>
   )
